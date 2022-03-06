@@ -36,6 +36,8 @@ In fact, if at any point a player selects 2 the other player can select 3 and vi
 java -jar SylverCoinage.jar A B C
 ```
 
+## Example Output
+
 ## How it Works
 A player is in a winning position when for every response their opponent can make, they have a response that leaves them in the winning position. It has been proven that any opening prime number greater than 3 is a winning move by **Player One**, but the necessary moves throughout a given game to maintain the winning position are mostly unknown. **It is not known whether any non-prime openings result in a winning position.** Non-primes less than 16 have all been shown to be losing openings, as such 16 is the smallest case that remains unknown. This program was originally written to investigate the case of 16.
 
