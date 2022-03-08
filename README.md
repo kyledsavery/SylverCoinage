@@ -1,5 +1,5 @@
 # Sylver Coinage
-Sylver Coinage is a two-player mathematical game played on the positive number line and the purpose of this program calculates which player is in a winning position for manageable game sizes given initial conditions.. Sylver Coinage was invented by John H. Conway and is named after James Joseph Sylvester who proved that any number greater than (_a_-1)(_b_-1)-1 for some integers _a_, _b_ > 0 can be made as a linear combination of _a_ and _b_. The game is described in _Winning Ways for Your Mathematical Plays_ (1982).
+Sylver Coinage is a two-player mathematical game played on the positive number line and the purpose of this program calculates which player is in a winning position for manageable game sizes given initial conditions.. Sylver Coinage was invented by John H. Conway and is named after James Joseph Sylvester who proved that any number greater than (_a_-1)(_b_-1)-1 for some positive integers _a_ and _b_ that are also relatively prime can be made as a linear combination of _a_ and _b_. The game is described in _Winning Ways for Your Mathematical Plays_ (1982).
 
 ## How to Play
 The game alternates between two players with each selecting an available integer on their turn. To begin, **Player One** chooses a positive integer say C<sub>1</sub>. This eliminates every non-negative multiple of that integer. **Player Two** can now select an integer, C<sub>2</sub>, such that C<sub>2</sub> =/= _m_ C<sub>1</sub>, for integer _m_ > 0. This effect compounds the longer the game is played, any choice must not be a linear combination of _any_ of the previous choices. So, when **Player One** prepares to make his second choice, it can not be of the form _m_ C<sub>1</sub> + _n_ C<sub>2</sub> for positive integers _m_, _n_. 
@@ -32,8 +32,23 @@ Suppose the following choices are made by both players:
 In fact, if at any point a player selects 2 the other player can select 3 and vice versa. This results in a board with only 1. Thus 1, 2, and 3 are regarded as trivial choices since selecting any of them puts the player in an obvious losing position. As such, this program ignores 1, 2, and 3 for simplicity.
 
 ## Usage
+The program's input is simply the initial choices made by both players, and these choices must result in a finite board. The choices must also not conflict with each other, that is, if an input can be made as a linear combination of previous inputs the program will quit. From the _dist_ folder, the below line will run the program. Where `A B C D E ...` represents the inital choices of positive integers and there can be as few as two or as many as necessary to eliminate the board.
 ```bash
-java -jar SylverCoinage.jar A B C
+java -jar SylverCoinage.jar A B C D E ...
+```
+
+### Example
+* The following line will is not valid as the choices are in conflict, since 17 can be made as a combination of 5 and 7.
+```bash
+java -jar SylverCoinage.jar 5 7 17
+```
+* This line is invalid as the resulting board is still infinite. Only the even numbers greater than 2 will have been eliminated.
+```bash
+java -jar SylverCoinage.jar 4 6
+```
+* This line will run properly and below is the output which demonstrates what move **Player One** should make next.
+```bash
+java -jar SylverCoinage.jar 5 7
 ```
 
 ## Example Output
