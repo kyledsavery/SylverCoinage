@@ -46,7 +46,7 @@ java -jar SylverCoinage.jar 5 7 17
 ```bash
 java -jar SylverCoinage.jar 4 6
 ```
-* This line will run properly and below is the output which demonstrates what move **Player One** should make next.
+* This input is valid
 ```bash
 java -jar SylverCoinage.jar 5 7
 ```
