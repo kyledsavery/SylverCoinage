@@ -37,7 +37,7 @@ The program's input is simply the initial choices made by both players, and thes
 java -jar SylverCoinage.jar A B C D E ...
 ```
 
-### Example
+### Examples
 * The following line will is not valid as the choices are in conflict, since 17 can be made as a combination of 5 and 7.
 ```bash
 java -jar SylverCoinage.jar 5 7 17
@@ -50,8 +50,6 @@ java -jar SylverCoinage.jar 4 6
 ```bash
 java -jar SylverCoinage.jar 5 7
 ```
-
-## Example Output
 
 ## How it Works
 A player is in a winning position when for every response their opponent can make, they have a response that leaves them in the winning position. It has been proven that any opening prime number greater than 3 is a winning move by **Player One**, but the necessary moves throughout a given game to maintain the winning position are mostly unknown. **It is not known whether any non-prime openings result in a winning position.** Non-primes less than 16 have all been shown to be losing openings, as such 16 is the smallest case that remains unknown. This program was originally written to investigate the case of 16.
