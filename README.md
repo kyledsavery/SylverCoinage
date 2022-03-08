@@ -38,7 +38,7 @@ java -jar SylverCoinage.jar A B C D E ...
 ```
 
 ### Examples
-* The following line will is not valid as the choices are in conflict, since 17 can be made as a combination of 5 and 7.
+* The following line is invalid as the choices are in conflict, since 17 can be made as a combination of 5 and 7.
 ```bash
 java -jar SylverCoinage.jar 5 7 17
 ```
